@@ -19,7 +19,12 @@ class Carousel {
     leftClick(){
         if (this.currentIndex < this.images.length - 1) {
             this.currentIndex++;
-            this.nextIndex = this.currentIndex + 1;
+            if (this.currentIndex === this.images.length - 1) {
+                this.nextIndex = 0;
+            } else {
+                this.nextIndex = this.currentIndex + 1;
+            }
+            
         } else {
             this.currentIndex = 0;
             this.nextIndex = 1;
